@@ -1,7 +1,6 @@
 name: curvedialog
 description: A Simple Curved Dialog Alert with Custom Message Display.
 version: 0.0.1
-author: Reuben Odunze <royalrubee@gmail.com>
 homepage: https://github.com/ibeninc/curvedialog
 
 environment:
