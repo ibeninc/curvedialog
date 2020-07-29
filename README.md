@@ -11,28 +11,37 @@ dependencies:
 ```
 Simple Usage:
 ```
-import 'package:curvedialog/curvedialog.dart';
 import 'package:flutter/material.dart';
+import 'package:curvedialog/curvedialog.dart';
 
-void main() {
-    runApp(new MaterialApp(
-    title: 'Curvedailog Demo',
-    home: new Curvedailogexample(),
-    debugShowCheckedModeBanner: false,
-  ));
-    // });
-  
+void main() => runApp(MyApp());
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'CurvedDialog Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: MyHomePage(title: 'CurvedDialog Demo'),
+    );
+  }
 }
 
-class Curvedailogexample extends StatefulWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key key, this.title}) : super(key: key);
+
+  final String title;
+
   @override
-  _CurvedailogexampleState createState() => _CurvedailogexampleState();
-    }
+  _MyHomePageState createState() => _MyHomePageState();
+}
 
-class _CurvedailogexampleState extends State<Curvedailogexample> {
-
-_showdialog(){
-  showDialog(
+class _MyHomePageState extends State<MyHomePage> {
+  
+  void _initiatedialog() {
+    showDialog(
         context: context,
         builder: (context) {
         return Curvedialog(
@@ -41,26 +50,31 @@ _showdialog(){
           );
         },
       );
-    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Curvedailog Demo"),
+        title: Text(widget.title),
       ),
       body: Center(
         child: Container(
               margin: EdgeInsets.all(20),
               child: FlatButton(
-                child: Text('Show Dialog'),
-                onPressed: _showdialog(),
+                child: Text('Show Dialog',
+                style: TextStyle(
+                  color: Colors.white
+                ),
+                ),
+                onPressed: _initiatedialog,
+                color: Colors.blue
               ),
-            ),
-      ),
+            ), 
+      ),// This trailing comma makes auto-formatting nicer for build methods.
     );
   }
-    }
+}
 
 ```
 ## Issues

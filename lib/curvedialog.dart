@@ -37,11 +37,11 @@ final String notice;
             CircleAvatar(
             radius: 35,
             backgroundColor: Colors.grey.shade200,
-            child: SvgPicture.asset(
-            'assets/alarm.svg',
-            height: 40,
-            width: 40,
-                ),
+            child: Icon(
+              Icons.notifications,
+              color: Colors.blueGrey,
+              size: 30
+            ),
               ),
             SizedBox(width: 7.0),
               Expanded(
@@ -83,7 +83,7 @@ final String notice;
                           Expanded(
                             child: RaisedButton(
                               child: Text("close"),
-                              color: Colors.grey,
+                              color: Colors.red,
                               colorBrightness: Brightness.dark,
                               onPressed: () {
                                 Navigator.pop(context);
